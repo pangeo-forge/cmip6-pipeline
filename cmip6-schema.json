@@ -81,6 +81,6 @@
     "description": "version",
     "mode": "REQUIRED",
     "name": "version",
-    "type": "INT64"
+    "type": "STRING"
   }
 ]
