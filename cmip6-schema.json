@@ -1,0 +1,86 @@
+[
+  {
+    "description": "activity ID",
+    "mode": "REQUIRED",
+    "name": "activity_id",
+    "type": "STRING"
+  },
+  {
+    "description": "institution ID",
+    "mode": "REQUIRED",
+    "name": "institution_id",
+    "type": "STRING"
+  },
+  {
+    "description": "source ID",
+    "mode": "REQUIRED",
+    "name": "source_id",
+    "type": "STRING"
+  },
+  {
+    "description": "experiment ID",
+    "mode": "REQUIRED",
+    "name": "experiment_id",
+    "type": "STRING"
+  },
+  {
+    "description": "member ID",
+    "mode": "REQUIRED",
+    "name": "member_id",
+    "type": "STRING"
+  },
+  {
+    "description": "table ID",
+    "mode": "REQUIRED",
+    "name": "table_id",
+    "type": "STRING"
+  },
+  {
+    "description": "variable ID",
+    "mode": "REQUIRED",
+    "name": "variable_id",
+    "type": "STRING"
+  },
+  {
+    "description": "grid label",
+    "mode": "REQUIRED",
+    "name": "grid_label",
+    "type": "STRING"
+  },
+  {
+    "description": "Zarr store location",
+    "mode": "REQUIRED",
+    "name": "zstore",
+    "type": "STRING"
+  },
+  {
+    "description": "DCPP start year",
+    "mode": "NULLABLE",
+    "name": "dcpp_start_year",
+    "type": "INT64"
+  },
+  {
+    "description": "status",
+    "mode": "REQUIRED",
+    "name": "status",
+    "type": "STRING"
+  },
+  {
+    "description": "severity",
+    "mode": "NULLABLE",
+    "name": "severity",
+    "type": "STRING"
+  },
+  {
+    "description": "issue URL",
+    "mode": "NULLABLE",
+    "name": "issue_url",
+    "type": "STRING"
+  },
+  {
+    "description": "version",
+    "mode": "REQUIRED",
+    "name": "version",
+    "type": "INT64"
+  }
+]
