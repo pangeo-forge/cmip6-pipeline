@@ -24,6 +24,12 @@
     "type": "STRING"
   },
   {
+    "description": "compound construction from sub_experiment_id and variant_label",
+    "mode": "REQUIRED",
+    "name": "member_id",
+    "type": "STRING"
+  },
+  {
     "description": "sub-experiment identifier (part of DRS member_id)",
     "mode": "NULLABLE",
     "name": "sub_experiment_id",
