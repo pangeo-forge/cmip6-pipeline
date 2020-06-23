@@ -1,63 +1,75 @@
 [
   {
-    "description": "activity ID",
+    "description": "activity identifier (part of DRS)",
     "mode": "REQUIRED",
     "name": "activity_id",
     "type": "STRING"
   },
   {
-    "description": "institution ID",
+    "description": "institution identifier (part of DRS)",
     "mode": "REQUIRED",
     "name": "institution_id",
     "type": "STRING"
   },
   {
-    "description": "source ID",
+    "description": "model identifier (part of DRS)",
     "mode": "REQUIRED",
     "name": "source_id",
     "type": "STRING"
   },
   {
-    "description": "experiment ID",
+    "description": "root experiment identifier (part of DRS)",
     "mode": "REQUIRED",
     "name": "experiment_id",
     "type": "STRING"
   },
   {
-    "description": "member ID",
-    "mode": "REQUIRED",
-    "name": "member_id",
+    "description": "sub-experiment identifier (part of DRS member_id)",
+    "mode": "NULLABLE",
+    "name": "sub_experiment_id",
     "type": "STRING"
   },
   {
-    "description": "table ID",
+    "description": "variant label (part of DRS member_id)",
+    "mode": "REQUIRED",
+    "name": "variant_label",
+    "type": "STRING"
+  },
+  {
+    "description": "table identifier (part of DRS)",
     "mode": "REQUIRED",
     "name": "table_id",
     "type": "STRING"
   },
   {
-    "description": "variable ID",
+    "description": "variable identifier (part of DRS)",
     "mode": "REQUIRED",
     "name": "variable_id",
     "type": "STRING"
   },
   {
-    "description": "grid label",
+    "description": "grid identifier (part of DRS)",
     "mode": "REQUIRED",
     "name": "grid_label",
     "type": "STRING"
   },
   {
-    "description": "Zarr store location",
+    "description": "Zarr store location in cloud storage",
     "mode": "REQUIRED",
     "name": "zstore",
     "type": "STRING"
   },
   {
-    "description": "DCPP start year",
-    "mode": "NULLABLE",
-    "name": "dcpp_start_year",
-    "type": "INT64"
+    "description": "Unique ID to reference all years of the same variable of a particular version of a run",
+    "mode": "REQUIRED",
+    "name": "dataset_tracking_id",
+    "type": "STRING"
+  },
+  {
+    "description": "All of the netCDF tracking IDs that have gone into this record",
+    "mode": "REPEATED",
+    "name": "netcdf_tracking_ids",
+    "type": "STRING"
   },
   {
     "description": "status",
