@@ -1,0 +1,104 @@
+[
+  {
+    "description": "activity identifier (part of DRS)",
+    "mode": "REQUIRED",
+    "name": "activity_id",
+    "type": "STRING"
+  },
+  {
+    "description": "institution identifier (part of DRS)",
+    "mode": "REQUIRED",
+    "name": "institution_id",
+    "type": "STRING"
+  },
+  {
+    "description": "model identifier (part of DRS)",
+    "mode": "REQUIRED",
+    "name": "source_id",
+    "type": "STRING"
+  },
+  {
+    "description": "root experiment identifier (part of DRS)",
+    "mode": "REQUIRED",
+    "name": "experiment_id",
+    "type": "STRING"
+  },
+  {
+    "description": "compound construction from sub_experiment_id and variant_label",
+    "mode": "REQUIRED",
+    "name": "member_id",
+    "type": "STRING"
+  },
+  {
+    "description": "sub-experiment identifier (part of DRS member_id)",
+    "mode": "NULLABLE",
+    "name": "sub_experiment_id",
+    "type": "STRING"
+  },
+  {
+    "description": "variant label (part of DRS member_id)",
+    "mode": "REQUIRED",
+    "name": "variant_label",
+    "type": "STRING"
+  },
+  {
+    "description": "table identifier (part of DRS)",
+    "mode": "REQUIRED",
+    "name": "table_id",
+    "type": "STRING"
+  },
+  {
+    "description": "variable identifier (part of DRS)",
+    "mode": "REQUIRED",
+    "name": "variable_id",
+    "type": "STRING"
+  },
+  {
+    "description": "grid identifier (part of DRS)",
+    "mode": "REQUIRED",
+    "name": "grid_label",
+    "type": "STRING"
+  },
+  {
+    "description": "Zarr store location in cloud storage",
+    "mode": "REQUIRED",
+    "name": "zstore",
+    "type": "STRING"
+  },
+  {
+    "description": "Unique ID to reference all years of the same variable of a particular version of a run",
+    "mode": "REQUIRED",
+    "name": "dataset_tracking_id",
+    "type": "STRING"
+  },
+  {
+    "description": "All of the netCDF tracking IDs that have gone into this record",
+    "mode": "REPEATED",
+    "name": "netcdf_tracking_ids",
+    "type": "STRING"
+  },
+  {
+    "description": "status",
+    "mode": "REQUIRED",
+    "name": "status",
+    "type": "STRING"
+  },
+  {
+    "description": "severity",
+    "mode": "NULLABLE",
+    "name": "severity",
+    "type": "STRING"
+  },
+  {
+    "description": "issue URL",
+    "mode": "NULLABLE",
+    "name": "issue_url",
+    "type": "STRING"
+  },
+  {
+    "description": "version",
+    "mode": "REQUIRED",
+    "name": "version",
+    "type": "STRING"
+  }
+]
