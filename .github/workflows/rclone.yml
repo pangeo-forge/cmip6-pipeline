@@ -1,0 +1,16 @@
+name: rclone daily sync
+on:
+  # runs daily at 00:00
+  schedule:
+    - cron: '0 0 * * *'
+jobs:
+  rclone:
+    runs-on: ubuntu-latest
+    steps:
+      - name: rclone - Google to S3
+        uses: wei/rclone@v1.1.1
+        env:
+          RCLONE_CONF: ${{ secrets.RCLONE_CONF }}
+        with:
+          # exclude CSV and JSON catalog files
+          args: 'sync --exclude /*.csv* --exclude /*.json* gs:cmip6 s3:cmip6-pds'
