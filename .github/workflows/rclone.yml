@@ -1,8 +1,8 @@
 name: rclone daily sync
 on:
-  # runs daily at 00:00
+  # runs daily at 0:00 UTC
   schedule:
-    - cron: '0 0 * * *'
+    - cron: "0 0 * * *"
 jobs:
   rclone:
     runs-on: ubuntu-latest
@@ -13,4 +13,4 @@ jobs:
           RCLONE_CONF: ${{ secrets.RCLONE_CONF }}
         with:
           # exclude CSV and JSON catalog files
-          args: 'sync --exclude /*.csv* --exclude /*.json* gs:cmip6 s3:cmip6-pds'
+          args: "sync --exclude /*.csv* --exclude /*.json* gs:cmip6 s3:cmip6-pds"
