@@ -1,8 +1,12 @@
 name: rclone daily sync
 on:
+  # testing until we can schedule job
+  push:
+    branches: 
+      - master
   # runs daily at 0:00 UTC
-  schedule:
-    - cron: "0 0 * * *"
+  #schedule:
+  #  - cron: "0 0 * * *"
 jobs:
   rclone:
     runs-on: ubuntu-latest
@@ -11,6 +15,7 @@ jobs:
         uses: wei/rclone@v1.1.1
         env:
           RCLONE_CONF: ${{ secrets.RCLONE_CONF }}
+          RCLONE_GCS_SERVICE_ACCOUNT_CREDENTIALS: ${{ secrets.RCLONE_GCS_SERVICE_ACCOUNT_CREDENTIALS }}
         with:
           # exclude CSV and JSON catalog files
           args: "sync --exclude /*.csv* --exclude /*.json* gs:cmip6 s3:cmip6-pds"
