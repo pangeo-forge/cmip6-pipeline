@@ -1,12 +1,8 @@
 name: rclone daily sync
 on:
-  # testing until we can schedule job
-  push:
-    branches: 
-      - master
   # runs daily at 0:00 UTC
-  #schedule:
-  #  - cron: "0 0 * * *"
+  schedule:
+    - cron: "0 */6 * * *"
 jobs:
   rclone:
     runs-on: ubuntu-latest
