@@ -1,4 +1,4 @@
-name: rclone daily sync
+name: rclone sync gs://cmip6 s3://cmip6-pds
 on:
   # runs 4x daily at 0,6,12,18:00 UTC
   schedule:
