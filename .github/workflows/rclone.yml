@@ -14,4 +14,4 @@ jobs:
           RCLONE_GCS_SERVICE_ACCOUNT_CREDENTIALS: ${{ secrets.RCLONE_GCS_SERVICE_ACCOUNT_CREDENTIALS }}
         with:
           # exclude CSV and JSON catalog files
-          args: "sync --exclude /*.csv* --exclude /*.json* -v gs:cmip6 s3:cmip6-pds"
+          args: "sync --exclude /*.csv* --exclude /*.json* -c -v gs:cmip6 s3:cmip6-pds"
