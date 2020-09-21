@@ -14,4 +14,4 @@ jobs:
           RCLONE_GCS_SERVICE_ACCOUNT_CREDENTIALS: ${{ secrets.RCLONE_GCS_SERVICE_ACCOUNT_CREDENTIALS }}
         with:
           # exclude CSV and JSON catalog files, use checksums instead of mod-times, verbose output
-          args: "sync --exclude /*.csv* --exclude /*.json* -c -v gs:cmip6 s3:cmip6-pds"
+          args: "sync --exclude /*.csv* --exclude /*.json* -c -v --transfers 45 --checkers 50 gs:cmip6 s3:cmip6-pds"
