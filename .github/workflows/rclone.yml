@@ -7,7 +7,7 @@ on:
   #schedule:
   #  - cron: "0 */6 * * *"
 jobs:
-  most of CMIP:
+  CMIP:
     runs-on: ubuntu-latest
     steps:
       - name: rclone - Google to S3
@@ -18,7 +18,7 @@ jobs:
         with:
           # exclude CSV and JSON catalog files, use checksums instead of mod-times, verbose output
           args: "sync -c -v gs:cmip6 s3:cmip6-pds --filter '- /CMIP/{NCAR,IPSL}/**' --filter '+ /CMIP/**' --filter '- *' --transfers 15 --checkers 65 --dry-run"			 
-  ScenarioMIP and parts of CMIP:
+  ScenarioMIP_NCAR_IPSL:
     runs-on: ubuntu-latest
     steps:
       - name: rclone - Google to S3
@@ -29,7 +29,7 @@ jobs:
         with:
           # exclude CSV and JSON catalog files, use checksums instead of mod-times, verbose output
           args: "sync -c -v gs:cmip6 s3:cmip6-pds --include /ScenarioMIP/** --include /CMIP/{NCAR,IPSL}/** --transfers 15 --checkers 65 --dry-run"
-  all remaining directories:
+  remainder:
     runs-on: ubuntu-latest
     steps:
       - name: rclone - Google to S3
