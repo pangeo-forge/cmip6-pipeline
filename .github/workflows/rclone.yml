@@ -16,8 +16,8 @@ jobs:
           RCLONE_CONF: ${{ secrets.RCLONE_CONF }}
           RCLONE_GCS_SERVICE_ACCOUNT_CREDENTIALS: ${{ secrets.RCLONE_GCS_SERVICE_ACCOUNT_CREDENTIALS }}
         with:
-          # exclude CSV and JSON catalog files, use checksums instead of mod-times, verbose output
-          args: "sync -c -v gs:cmip6 s3:cmip6-pds --filter '- /CMIP/{NCAR,IPSL}/**' --filter '+ /CMIP/**' --filter '- *' --transfers 15 --checkers 65 --dry-run"			 
+          # CMIP excluding NCAR/IPSL
+          args: "sync -c -v gs:cmip6 s3:cmip6-pds --filter '- /CMIP/{NCAR,IPSL}/**' --filter '+ /CMIP/**' --filter '- *' --transfers 15 --checkers 65"			 
   ScenarioMIP_NCAR_IPSL:
     runs-on: ubuntu-latest
     steps:
@@ -27,8 +27,8 @@ jobs:
           RCLONE_CONF: ${{ secrets.RCLONE_CONF }}
           RCLONE_GCS_SERVICE_ACCOUNT_CREDENTIALS: ${{ secrets.RCLONE_GCS_SERVICE_ACCOUNT_CREDENTIALS }}
         with:
-          # exclude CSV and JSON catalog files, use checksums instead of mod-times, verbose output
-          args: "sync -c -v gs:cmip6 s3:cmip6-pds --include /ScenarioMIP/** --include /CMIP/{NCAR,IPSL}/** --transfers 15 --checkers 65 --dry-run"
+          # ScenarioMIP and NCAR/IPSL from CMIP
+          args: "sync -c -v gs:cmip6 s3:cmip6-pds --include /ScenarioMIP/** --include /CMIP/{NCAR,IPSL}/** --transfers 15 --checkers 65"
   remainder:
     runs-on: ubuntu-latest
     steps:
@@ -38,5 +38,5 @@ jobs:
           RCLONE_CONF: ${{ secrets.RCLONE_CONF }}
           RCLONE_GCS_SERVICE_ACCOUNT_CREDENTIALS: ${{ secrets.RCLONE_GCS_SERVICE_ACCOUNT_CREDENTIALS }}
         with:
-          # exclude CSV and JSON catalog files, use checksums instead of mod-times, verbose output
-          args: "sync -c -v gs:cmip6 s3:cmip6-pds --exclude /{CMIP,ScenarioMIP}/** --exclude /*.* --transfers 15 --checkers 65 --dry-run"
+          # remainder of directories left untouched
+          args: "sync -c -v gs:cmip6 s3:cmip6-pds --exclude /{CMIP,ScenarioMIP}/** --exclude /*.* --transfers 15 --checkers 65"
