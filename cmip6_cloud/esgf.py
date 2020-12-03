@@ -56,7 +56,7 @@ def _get_page_dataframe(server, expected_size, offset=0,
         dataset_id = d['dataset_id']
         item = OrderedDict(dataset_id=dataset_id, id=d['id'])
         target_urls = d.pop('url')
-        item.update(_maybe_squeze_values(d))
+        item.update(_maybe_squeeze_values(d))
         for f in target_urls:
             access_url, mime_type, service_type = f.split("|")
 
