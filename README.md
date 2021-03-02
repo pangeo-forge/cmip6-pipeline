@@ -4,7 +4,7 @@ Pipeline for cloud-based CMIP6 data ingestion pipeline
 
 ## Coordination Meetings
 
-The group of people working on "CMIP6 in the cloud" involves folks from LDEO, GFDL, and CEDA. 
+The group of people working on "CMIP6 in the cloud" involves folks from LDEO, GFDL, Rhodium Group and CEDA. 
 
 We hold regular coordination meetings every other Friday at 10am ET (Location:
 https://columbiauniversity.zoom.us/j/6902819781).
